@@ -28,13 +28,14 @@ img {
 }
 
 button {
-  margin-top: 20px;
+  position: absolute;
   padding: 12px;
   border-radius: 10px;
   border: none;
   background: white;
   color: #ff4b7d;
   font-size: 16px;
+  cursor: pointer;
 }
 
 /* CORAÇÕES */
@@ -57,36 +58,50 @@ button {
 
 <h1>💗 Pra você, Mirela 💗</h1>
 
-<p>Hoje é o seu dia… mas eu fico pensando em tudo que a gente já viveu juntos.</p>
+<p>Hoje é o seu dia… e eu fiquei pensando em tudo que a gente já viveu juntos.</p>
 
-<img src="COLOCA_AQUI_A_FOTO">
+<p>Desde quando a gente se conheceu pelo Discord… até todas as coisas que a gente passou.</p>
 
-<p>Desde quando a gente se conheceu pelo Discord… a gente já passou por muita coisa.</p>
+<p>A gente já brigou, já se estressou… mas sempre acabou voltando.</p>
 
-<p>Já passamos por um mau bocado, já brigamos bastante… mas sempre voltamos.</p>
+<p>Porque no final… eu sempre escolho você.</p>
 
-<p>😭 não vou nem comentar desses pé aqui… mas eu amo mesmo assim</p>
-
-<p>Mesmo quando tá difícil, eu ainda escolho você.</p>
-
-<p>Eu quero ter uma família com você e viver o resto da minha vida ao seu lado.</p>
+<p>Eu quero você na minha vida, quero viver tudo com você de verdade.</p>
 
 <p><strong>Eu amo você, Mirela ❤️</strong></p>
 
 <p>💗 Feliz aniversário meu amor 🎂💗</p>
 
-<p>Eu escolheria você mil vezes… pra sempre ❤️</p>
-
-<!-- BOTÃO SURPRESA -->
-<button onclick="abrirSurpresa()">Clica aqui 💌</button>
+<p>Tem um presente secreto aí embaixo… mas não vai ser tão fácil 😏</p>
 
 </div>
 
+<button id="botao" onclick="clicou()">🎁 abrir presente</button>
+
 <script>
-function abrirSurpresa() {
-  window.open("https://canva.link/rm9w5golp1kfd32", "_blank");
+let cliques = 0;
+const botao = document.getElementById("botao");
+
+function clicou() {
+  cliques++;
+
+  if (cliques < 5) {
+    alert("Errou 😈 tenta de novo");
+
+    // botão foge
+    botao.style.top = Math.random() * 80 + "%";
+    botao.style.left = Math.random() * 80 + "%";
+  } else {
+    alert("Agora sim 😏❤️");
+    window.open("https://canva.link/rm9w5golp1kfd32", "_blank");
+  }
 }
 
+// posição inicial
+botao.style.top = "70%";
+botao.style.left = "40%";
+
+/* CORAÇÕES */
 function criarCoracao() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
