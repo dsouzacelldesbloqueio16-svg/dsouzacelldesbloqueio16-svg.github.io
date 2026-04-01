@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Pra Mirela 💗</title>
+
+<style>
+body {
+  margin: 0;
+  background: #ffc0cb;
+  font-family: Arial;
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  background: #ff69b4;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+img {
+  width: 80%;
+  border-radius: 15px;
+  border: 3px solid white;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: #ff4b7d;
+  font-size: 16px;
+}
+
+/* CORAÇÕES */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💗 Pra você, Mirela 💗</h1>
+
+<p>Hoje é o seu dia… mas eu fico pensando em tudo que a gente já viveu juntos.</p>
+
+<img src="COLOCA_AQUI_A_FOTO">
+
+<p>Desde quando a gente se conheceu pelo Discord… a gente já passou por muita coisa.</p>
+
+<p>Já passamos por um mau bocado, já brigamos bastante… mas sempre voltamos.</p>
+
+<p>😭 não vou nem comentar desses pé aqui… mas eu amo mesmo assim</p>
+
+<p>Mesmo quando tá difícil, eu ainda escolho você.</p>
+
+<p>Eu quero ter uma família com você e viver o resto da minha vida ao seu lado.</p>
+
+<p><strong>Eu amo você, Mirela ❤️</strong></p>
+
+<p>💗 Feliz aniversário meu amor 🎂💗</p>
+
+<p>Eu escolheria você mil vezes… pra sempre ❤️</p>
+
+<!-- BOTÃO SURPRESA -->
+<button onclick="abrirSurpresa()">Clica aqui 💌</button>
+
+</div>
+
+<script>
+function abrirSurpresa() {
+  window.open("https://canva.link/rm9w5golp1kfd32", "_blank");
+}
+
+function criarCoracao() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💗";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 5000);
+}
+
+setInterval(criarCoracao, 300);
+</script>
+
+</body>
+</html>
